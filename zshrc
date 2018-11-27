@@ -126,6 +126,22 @@ setopt INC_APPEND_HISTORY
 
 alias socks='ssh -D 51820 -q -C -N -f umang@umangparmar.me -p 36547'
 alias killsock='killall -9 ssh'
+alias amend='git commit --amend'
+
+merge_ups() {
+	git fetch upstream
+	if [ "$#" -eq 0 ]; then
+		git merge upstream/master
+	else
+		git merge "$1"
+	fi
+}
+
+gpush() {
+	git add .
+	git commit -m "${1}"
+	git push origin master
+}
 
 readb() {
 	sudo adb kill-server
@@ -134,6 +150,5 @@ readb() {
 }
 
 dl3(){
-	youtube-dl --extract-naudio --audio-format mp3 $1 -f 'bestaudio'
+	youtube-dl --extract-audio --audio-format mp3 $1 -f 'bestaudio'
 }
-
