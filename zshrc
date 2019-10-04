@@ -127,6 +127,7 @@ setopt INC_APPEND_HISTORY
 alias socks='ssh -D 51820 -q -C -N -f umang@umangparmar.me -p 36547'
 alias killsock='killall -9 ssh'
 alias amend='git commit --amend'
+alias clr='clear'
 
 merge_ups() {
 	git fetch upstream
