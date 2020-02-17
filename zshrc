@@ -81,17 +81,6 @@ export EDITOR='nano'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias clr="clear"
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias ls='ls --color=auto'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
-
-alias cd..='cd ..'
-
 #
 # # ex - archive extractor
 # # usage: ex <file>
@@ -124,13 +113,21 @@ export PATH=$HOME/Sysorg/Scripts:$HOME/.local/bin:$GOPATH/bin:$HOME/wps-office/:
 export ANDROID_HOME=$HOME/Android
 setopt INC_APPEND_HISTORY
 
+alias clr="clear"
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias cd..='cd ..'
 alias sock='ssh -D 51820 -q -C -N -f umang@umangparmar.me -p 36547'
 alias killsock='killall -9 ssh'
 alias amend='git commit --amend'
-alias clr='clear'
 alias fuck='sudo pacman -Syu'
 alias aurfuck='yay -Syu'
-
+alias cd..='cd ..'
 
 merge_ups() {
 	git fetch upstream
