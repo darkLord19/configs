@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/umang/.oh-my-zsh
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -124,10 +124,13 @@ export PATH=$HOME/Sysorg/Scripts:$HOME/.local/bin:$GOPATH/bin:$HOME/wps-office/:
 export ANDROID_HOME=$HOME/Android
 setopt INC_APPEND_HISTORY
 
-alias socks='ssh -D 51820 -q -C -N -f umang@umangparmar.me -p 36547'
+alias sock='ssh -D 51820 -q -C -N -f umang@umangparmar.me -p 36547'
 alias killsock='killall -9 ssh'
 alias amend='git commit --amend'
 alias clr='clear'
+alias fuck='sudo pacman -Syu'
+alias aurfuck='yay -Syu'
+
 
 merge_ups() {
 	git fetch upstream
@@ -152,4 +155,16 @@ readb() {
 
 dl3(){
 	youtube-dl --extract-audio --audio-format mp3 $1 -f 'bestaudio'
+}
+
+unotes() {
+  if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+  else
+  "$EDITOR" "~/Documents/unotes/""$1"".txt"
+  fi
+}
+
+dns_flush_osx() {
+	sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 }
