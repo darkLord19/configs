@@ -155,11 +155,14 @@ dl3(){
 }
 
 unotes() {
-  if [ $# -eq 0 ]; then
-    echo "No arguments supplied"
-  else
-  "$EDITOR" "~/Documents/unotes/""$1"".txt"
-  fi
+	if [ $# -eq 0 ]; then
+     		echo "No arguments supplied"
+   	elif [[ $1 -eq "push" ]]; then
+     		msg="Add notes for ""$(date +%d-%m-%Y)"
+     		$(cd ~/Documents/unotes; git pull; git add .; git commit -m $msg; git push origin master)
+   	else
+     		"$EDITOR" "~/Documents/unotes/""$1"".txt"
+   	fi
 }
 
 dns_flush_osx() {
