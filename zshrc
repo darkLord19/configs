@@ -128,6 +128,7 @@ alias amend='git commit --amend'
 alias fuck='sudo pacman -Syu'
 alias aurfuck='yay -Syu'
 alias cd..='cd ..'
+alias rcp="rsync --verbose --progress --partial"
 
 merge_ups() {
 	git fetch upstream
