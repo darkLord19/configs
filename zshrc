@@ -169,3 +169,7 @@ unotes() {
 dns_flush_osx() {
 	sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 }
+
+play_random() {
+	vlc --LZ $1
+}
