@@ -173,3 +173,15 @@ dns_flush_osx() {
 play_random() {
 	vlc --LZ $1
 }
+
+# git aliases
+alias push="git push"
+alias pull="git pull"
+alias yyb="yarn && yarn build"
+alias yy="yarn"
+alias yb="yarn build"
+alias gyb="gl && yarn && yarn build"
+
+alias gcla="git submodule foreach 'git checkout launchpad || :'"
+alias gcll="git submodule foreach 'git pull || :'"
+alias gclal="git submodule foreach 'git checkout launchpad || :' && git submodule foreach 'git pull || :'"
